@@ -1,0 +1,18 @@
+ 8         CandelariaCernadas      1
+10         CeciliaOjeda            2
+10         ConsueloCaceres         2
+10         DaianaRamirez           2
+10         DaianaTorres            2
+ 8         DanielaPadilla          1
+10         EmilianoPolicardo       2
+ ?         EzequielLencina         1
+ 8         FedericaAlem            -
+10         GastonCalderon          2
+10         JoelTroc                2
+10         JuanPabloPedraza        2
+ ?         MarianoRamos            -
+10         MauricioGaggero         2
+10         MiguelLorea             1
+ 9         TomasMalvissi           2
+10         UrielHenderson          2
+         
