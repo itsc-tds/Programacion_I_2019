@@ -1,0 +1,49 @@
+Proceso PlayaDeEstacionamiento
+	Definir  hora como entero;
+	Definir cobro como entero;
+	//Variables
+	hora <- 0;
+	cobro <- 0;
+	
+	Escribir " Ingrese las horas que el cliente estuvo en el estacionamiento";
+	Leer hora;
+	Limpiar Pantalla;
+	
+	Si hora >0 Y hora <=2 Entonces 
+		Escribir "Las horas a cobrar son", hora;
+		cobro<- hora*65;
+		Escribir "El cobro sera de: " ,cobro, " Pesos";
+		
+	FinSi
+	
+	Si  hora>2 y hora<=5  Entonces
+		
+		Escribir  "Las horas a cobrar son", hora,;
+		cobro <- hora*65;
+		Escribir "El cobro sera de: " ,cobro, "Pesos";
+		
+	FinSi
+	
+	Si hora>5 Y hora<=10 Entonces
+		
+		Escribir "Las horas a cobrar son", hora;
+		cobro <- hora*65;
+		Escribir "El cobro sera de: " ,cobro," Pesos";
+		
+	FinSi
+	
+	Si hora>10 Entonces
+		
+		Escribir "Las horas a cobrar son", hora;
+		cobro <- hora*65;
+		Escribir "El cobro sera de: " ,cobro, " Pesos";
+		
+	FinSi
+	
+	
+	
+	
+	
+	
+	
+FinProceso
