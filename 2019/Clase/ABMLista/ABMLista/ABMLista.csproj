@@ -52,6 +52,7 @@
     <Compile Include="frm.Designer.cs">
       <DependentUpon>frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm.resx">

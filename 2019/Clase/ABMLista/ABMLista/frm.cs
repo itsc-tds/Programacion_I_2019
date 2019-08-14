@@ -17,8 +17,8 @@ namespace ABMLista
         #endregion
 
         #region Propiedades
-        string[] Lista = new string[5];
-        int ProximaPosicion = 0;
+        ABMLista.Clases.Lista Alumnos = new Clases.Lista();
+        ABMLista.Clases.Lista Materias = new Clases.Lista();
         #endregion
 
         public frm()
@@ -28,48 +28,21 @@ namespace ABMLista
 
         private void BtAgregar_Click(object sender, EventArgs e)
         {
-            if(ProximaPosicion==Lista.Length)
+
+            if (Alumnos.Agregar(txt.Text))
             {
-                this.AgregaRegistro(Incremento);
+                lbl.Text = Alumnos.MostrarLista();
+            }
+            else
+            {
+                MessageBox.Show("e r r o r");
             }
 
-            Lista[ProximaPosicion] = txt.Text;
-            ProximaPosicion++;
-            lbl.Text = this.MostrarLista();
 
             txt.SelectAll();
             txt.Focus();
 
         }
 
-        private string MostrarLista()
-        {
-            string Respuesta = "";
-            if (ProximaPosicion > 0)
-            {
-                Respuesta = Lista[0];
-                for (int i = 1; i < ProximaPosicion; i++)
-                {
-                    Respuesta = Respuesta + "\r\n" + Lista[i];
-                }
-            }
-            return Respuesta;
-        }
-
-        private void AgregaRegistro(int Incremento)
-        {
-            string[] Temp = new string[Lista.Length + Incremento];
-            Lista = this.Copiar(Lista, Temp);
-
-        }
-
-        private string[] Copiar(string[] Origen, string[] Destino)
-        {
-            for (int i = 0; i < Origen.Length; i++)
-            {
-                Destino[i] = Origen[i];
-            }
-            return Destino;
-        }
     }
 }
