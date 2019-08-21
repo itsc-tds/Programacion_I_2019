@@ -70,6 +70,7 @@
             this.btBuscar.TabIndex = 2;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
             // 
             // btBorrar
             // 
@@ -79,6 +80,7 @@
             this.btBorrar.TabIndex = 3;
             this.btBorrar.Text = "Borrar";
             this.btBorrar.UseVisualStyleBackColor = true;
+            this.btBorrar.Click += new System.EventHandler(this.BtBorrar_Click);
             // 
             // textBox1
             // 

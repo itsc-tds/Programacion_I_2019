@@ -69,6 +69,53 @@ namespace ABMLista.Clases
             return Destino;
         }
 
+        /// <summary>
+        /// Devuelve la posicion del texto (entero) dentro del arregla, <br/>
+        /// la cuenta inicia en 0 (cero).
+        /// Devuelve -1 cuando no encuentra Que en la lista.
+        /// </summary>
+        /// <param name="Que">texto completo a buscar en la lista</param>
+        public int BuscarPosicion(string Que)
+        {
+            int Resp = -1;
+
+            for (int i = 0; i < lista.Length; i++)
+            {
+                if (lista[i].CompareTo(Que) == 0)
+                {
+                    Resp = i;
+                    break;
+                }
+            }
+
+            return Resp;
+        }
+
+        public string Borrar(string Que)
+        {
+            string Resp = "";
+            int Pos = this.BuscarPosicion(Que);
+            if(Pos==-1)
+            {
+                Resp = Que + " no ha sido encontrado en la lista.";
+            }
+            else
+            {
+                for (int i = Pos; i < ProximaPosicion-1; i++)
+                {
+                    this.lista[i] = this.lista[i + 1];
+                }
+                this.lista[ProximaPosicion-1] = null;
+
+
+                // aca continuan Uds. suerte.
+                // tienen que disminuir el arreglo en uno.
+                // agregar comentario del metodo.
+            }
+
+            return Resp;
+        }
+
         #endregion
     }
 }

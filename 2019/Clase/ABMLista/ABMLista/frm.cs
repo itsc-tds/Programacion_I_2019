@@ -44,5 +44,27 @@ namespace ABMLista
 
         }
 
+        private void BtBuscar_Click(object sender, EventArgs e)
+        {
+            int Pos = Alumnos.BuscarPosicion(txt.Text);
+            if (Pos == -1)
+            {
+                lbl.Text = "El alumno " + txt.Text + " no se encontró";
+            }
+            else
+            {
+                lbl.Text = "la posición del alumno es " + (Pos + 1).ToString();
+            }
+        }
+
+        private void BtBorrar_Click(object sender, EventArgs e)
+        {
+            string Resp = Alumnos.Borrar(txt.Text);
+            if(string.IsNullOrEmpty(Resp))
+            {
+                Resp="el alumno " + txt.Text + " ha sido borrado";
+            }
+            lbl.Text = Resp;
+        }
     }
 }
