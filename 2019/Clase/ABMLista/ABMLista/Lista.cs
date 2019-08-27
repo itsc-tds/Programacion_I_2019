@@ -59,10 +59,9 @@ namespace ABMLista.Clases
             lista = this.Copiar(lista, Temp);
         }
 
-
         private string[] Copiar(string[] Origen, string[] Destino)
         {
-            for (int i = 0; i < Origen.Length; i++)
+            for (int i = 0; i < ProximaPosicion; i++)
             {
                 Destino[i] = Origen[i];
             }
@@ -106,11 +105,8 @@ namespace ABMLista.Clases
                     this.lista[i] = this.lista[i + 1];
                 }
                 this.lista[ProximaPosicion-1] = null;
-
-
-                // aca continuan Uds. suerte.
-                // tienen que disminuir el arreglo en uno.
-                // agregar comentario del metodo.
+                ProximaPosicion = ProximaPosicion - 1;
+                AgregaRegistro(-1);
             }
 
             return Resp;

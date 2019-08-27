@@ -26,6 +26,7 @@ namespace ABMLista
             InitializeComponent();
         }
 
+        #region EVENTOS
         private void BtAgregar_Click(object sender, EventArgs e)
         {
 
@@ -60,11 +61,14 @@ namespace ABMLista
         private void BtBorrar_Click(object sender, EventArgs e)
         {
             string Resp = Alumnos.Borrar(txt.Text);
-            if(string.IsNullOrEmpty(Resp))
+            if (string.IsNullOrEmpty(Resp))
             {
-                Resp="el alumno " + txt.Text + " ha sido borrado";
+                Resp = "el alumno " + txt.Text + " ha sido borrado";
             }
             lbl.Text = Resp;
         }
+
+        #endregion
+
     }
 }
