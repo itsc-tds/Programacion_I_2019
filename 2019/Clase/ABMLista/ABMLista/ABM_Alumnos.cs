@@ -10,25 +10,30 @@ using System.Windows.Forms;
 
 namespace ABMLista
 {
-    public partial class ABM : Form
+    public partial class ABM_Alumnos : Form
     {
         #region Constantes
         const int Incremento = 1;
         #endregion
 
         #region Propiedades
-        ABMLista.Clases.Lista Alumnos = new Clases.Lista();
-        Alumnos alumno = new Alumnos();
+        ABMLista.Clases.ListaObjetos Alumnos = new Clases.ListaObjetos();
+        int idModificador;
+       
         #endregion
 
-        public ABM()
+        public ABM_Alumnos()
         {
             InitializeComponent();
         }
 
         private void BtAgregar_Click(object sender, EventArgs e)
         {
-            if (Alumnos.Agregar(txtNombre.Text))
+            Alumnos alumno = new Alumnos();
+            alumno.Apellido = txtApellido.Text;
+            alumno.Nombre = txtNombre.Text;
+            alumno.Notas[0] = txtNota.Text;
+            if (Alumnos.Agregar(alumno))
             {
                 lblCarga.Text = Alumnos.MostrarLista();
             }
@@ -44,7 +49,7 @@ namespace ABMLista
 
         private void BtBorrar_Click(object sender, EventArgs e)
         {
-            string Resp = Alumnos.Borrar(txtNombre.Text);
+            string Resp = Alumnos.Borrar(txtApellido.Text + ", "+ txtNombre.Text);
             if (string.IsNullOrEmpty(Resp))
             {
                 MessageBox.Show("el alumno " + txtNombre.Text + " ha sido borrado");
@@ -54,7 +59,7 @@ namespace ABMLista
 
         private void BtModificar_Click(object sender, EventArgs e)
         {
-
+            Alumnos.Modificar(Alumnos.BuscarPosicion(idModificador.ToString()), txtNombre.Text, txtApellido.Text);
         }
 
         private void BtBuscar_Click(object sender, EventArgs e)
@@ -67,6 +72,8 @@ namespace ABMLista
             else
             {
                 lblCarga.Text = "la posición del alumno es " + (Pos + 1).ToString();
+                idModificador = Pos + 1;
+                btModificar.Enabled = true;
             }
         }
 
@@ -82,10 +89,5 @@ namespace ABMLista
             lblOrdenado.Text = Alumnos.Ordenar();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            ABM_Alumnos abm = new ABM_Alumnos();
-            abm.ShowDialog();
-        }
     }
 }
