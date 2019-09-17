@@ -28,7 +28,7 @@ namespace ABMLista
 
         private void BtAgregar_Click(object sender, EventArgs e)
         {
-            if (Alumnos.Agregar(txtNombre.Text + " - " + txtNota.Text ))
+            if (Alumnos.Agregar(txtNombre.Text + " - " + txtNota.Text   ))
             {
                 lblCarga.Text = Alumnos.MostrarLista();
             }
