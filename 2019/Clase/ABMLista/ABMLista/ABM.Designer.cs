@@ -59,7 +59,7 @@
             this.txtNombre.Location = new System.Drawing.Point(15, 38);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 0;
             // 
             // lblNota
             // 
@@ -111,7 +111,7 @@
             this.btOrdenar.Location = new System.Drawing.Point(256, 203);
             this.btOrdenar.Name = "btOrdenar";
             this.btOrdenar.Size = new System.Drawing.Size(75, 23);
-            this.btOrdenar.TabIndex = 10;
+            this.btOrdenar.TabIndex = 7;
             this.btOrdenar.Text = "Ordenar";
             this.btOrdenar.UseVisualStyleBackColor = true;
             this.btOrdenar.Click += new System.EventHandler(this.BtOrdenar_Click);
@@ -121,7 +121,7 @@
             this.btBorrar.Location = new System.Drawing.Point(256, 74);
             this.btBorrar.Name = "btBorrar";
             this.btBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btBorrar.TabIndex = 11;
+            this.btBorrar.TabIndex = 3;
             this.btBorrar.Text = "Borrar";
             this.btBorrar.UseVisualStyleBackColor = true;
             this.btBorrar.Click += new System.EventHandler(this.BtBorrar_Click);
@@ -131,7 +131,7 @@
             this.btModificar.Location = new System.Drawing.Point(256, 103);
             this.btModificar.Name = "btModificar";
             this.btModificar.Size = new System.Drawing.Size(75, 23);
-            this.btModificar.TabIndex = 12;
+            this.btModificar.TabIndex = 4;
             this.btModificar.Text = "Modificar";
             this.btModificar.UseVisualStyleBackColor = true;
             this.btModificar.Click += new System.EventHandler(this.BtModificar_Click);
@@ -141,7 +141,7 @@
             this.btBuscar.Location = new System.Drawing.Point(256, 135);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btBuscar.TabIndex = 13;
+            this.btBuscar.TabIndex = 5;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.UseVisualStyleBackColor = true;
             this.btBuscar.Click += new System.EventHandler(this.BtBuscar_Click);
@@ -151,7 +151,7 @@
             this.btMostrar.Location = new System.Drawing.Point(256, 167);
             this.btMostrar.Name = "btMostrar";
             this.btMostrar.Size = new System.Drawing.Size(75, 23);
-            this.btMostrar.TabIndex = 14;
+            this.btMostrar.TabIndex = 6;
             this.btMostrar.Text = "Mostrar";
             this.btMostrar.UseVisualStyleBackColor = true;
             this.btMostrar.Click += new System.EventHandler(this.BtMostrar_Click);
@@ -161,7 +161,7 @@
             this.btAgregar.Location = new System.Drawing.Point(256, 39);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btAgregar.TabIndex = 15;
+            this.btAgregar.TabIndex = 2;
             this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = true;
             this.btAgregar.Click += new System.EventHandler(this.BtAgregar_Click);
@@ -171,20 +171,21 @@
             this.txtNota.Location = new System.Drawing.Point(121, 38);
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(100, 20);
-            this.txtNota.TabIndex = 18;
+            this.txtNota.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Objetar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // ABM
             // 
+            this.AcceptButton = this.btAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 252);

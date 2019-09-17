@@ -107,7 +107,10 @@ namespace ABMLista.Clases
 
             return Resp;
         }
-
+        /// <summary>
+        /// Ordena una lista en forma alfabetica 
+        /// </summary>
+        /// <returns></returns>
         public string Ordenar()
         {
             string salida = "";

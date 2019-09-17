@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ABMLista
@@ -19,7 +12,7 @@ namespace ABMLista
         #region Propiedades
         ABMLista.Clases.ListaObjetos Alumnos = new Clases.ListaObjetos();
         int idModificador;
-       
+
         #endregion
 
         public ABM_Alumnos()
@@ -32,7 +25,6 @@ namespace ABMLista
             Alumnos alumno = new Alumnos();
             alumno.Apellido = txtApellido.Text;
             alumno.Nombre = txtNombre.Text;
-            alumno.Notas[0] = txtNota.Text;
             if (Alumnos.Agregar(alumno))
             {
                 lblCarga.Text = Alumnos.MostrarLista();
@@ -43,16 +35,17 @@ namespace ABMLista
             }
 
 
+            LlenarDataGridView(alumno);
             txtNombre.SelectAll();
             txtNombre.Focus();
         }
 
         private void BtBorrar_Click(object sender, EventArgs e)
         {
-            string Resp = Alumnos.Borrar(txtApellido.Text + ", "+ txtNombre.Text);
+            string Resp = Alumnos.Borrar(txtApellido.Text + ", " + txtNombre.Text);
             if (string.IsNullOrEmpty(Resp))
             {
-                MessageBox.Show("el alumno " + txtNombre.Text + " ha sido borrado");
+                MessageBox.Show("El alumno '" + txtNombre.Text + "' ha sido borrado");
             }
             lblCarga.Text = Alumnos.MostrarLista();
         }
@@ -89,5 +82,15 @@ namespace ABMLista
             lblOrdenado.Text = Alumnos.Ordenar();
         }
 
+        public void LlenarDataGridView(Alumnos alumno)
+        {
+            dgvAlumnos.Rows.Add(alumno.Id, alumno.Apellido, alumno.Nombre);
+        }
+
+        private void DgvAlumnos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+            lblAlumnoSeleccionado.Text = dgvAlumnos.Rows[e.RowIndex].Cells[0].Value.ToString();
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace ABMLista
 
         private void BtAgregar_Click(object sender, EventArgs e)
         {
-            if (Alumnos.Agregar(txtNombre.Text))
+            if (Alumnos.Agregar(txtNombre.Text + " - " + txtNota.Text ))
             {
                 lblCarga.Text = Alumnos.MostrarLista();
             }
@@ -62,11 +62,11 @@ namespace ABMLista
             int Pos = Alumnos.BuscarPosicion(txtNombre.Text);
             if (Pos == -1)
             {
-                lblCarga.Text = "El alumno " + txtNombre.Text + " no se encontró";
+               MessageBox.Show( "No se pudo encontrar el alumno" + txtNombre.Text);
             }
             else
             {
-                lblCarga.Text = "la posición del alumno es " + (Pos + 1).ToString();
+                MessageBox.Show("El alumno " + txtNombre.Text + " fue encontrado en la posición "+ (Pos + 1).ToString());
             }
         }
 
